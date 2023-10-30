@@ -2,7 +2,7 @@
 
 = Introduction
 
-#lorem(500)
+#lorem(50)
 
 #listing(
   "Example Listing with code highlight",
