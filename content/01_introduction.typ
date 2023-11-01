@@ -2,6 +2,8 @@
 
 = Introduction
 
+This is a test citing, my friend @test.
+
 #lorem(50)
 
 #listing(
