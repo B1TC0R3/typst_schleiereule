@@ -8,10 +8,15 @@
 
 //Title page
 #titlepage(
-  title: "Example Title",
-  authors: (
-    "Thomas Gingele",
-  )
+  title  : "This is a very long example title to fill more lines",
+  date   : "01.01.1970",
+  authors: ("Thomas Gingele", "His fictional friend"),
+  logos  : (), //Supports 0 to 2 logos, enter image path/s as array
+  content: [
+    This is some additional content for the title page.\
+    It can be used for adding important information.\
+    It supports normal typst syntax for formatting as well.
+  ]
 )
 
 //Table of content
@@ -23,4 +28,4 @@
 #pagebreak()
 
 //Bibliography
-#bibliography("bib.yml")
+#bibliography("bib.bib")
