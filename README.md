@@ -129,4 +129,4 @@ Parameters:
 
 ## 4. Example
 
-- WIP
+An example for what the template looks like can be found [here](./example.pdf).
