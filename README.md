@@ -5,7 +5,13 @@
 ## Content
 
 1. [About](#about)
-2. [Usage](#usage)
+2. [Styles](#styles)
+2. [Functions](#functions)
+    2.1. [titlepage](#titlepage)
+    2.2. [table\_of\_content](#table_of_content)
+    2.3. [listing](#listing)
+    2.4. [note](#note)
+    2.5. [warning-note](#warning-note)
 3. [Example](#example)
 
 ## 1. About
@@ -29,11 +35,11 @@ slightly. At the moment this only means changing the page numbering style from n
 
 ## 3. Functions
 
-### titlepage()
+### titlepage
 
 This function will create a titlepage.
 
-Parameters:
+#### Parameters
 
 | Name | Optional | Datatype | Description |
 |------|----------|----------|-------------|
@@ -59,18 +65,18 @@ Parameters:
 )
 ```
 
-### table\_of\_content()
+### table\_of\_content
 
 This function will render an outline of the content and optionally of all listings, figures and tables.
 
-Parameters:
+#### Parameters
 
 
-| Name | Optional | Datatype | Description |
-|------|----------|----------|–------------|
-| `listings` | Yes | Boolean | Will not render an outline for listings when set to false. |
-| `figures` | Yes | Boolean | Will not render an outline for figures when set to false. |
-| `tables` | Yes | Boolean | Will not render an outline for tables when set to false. |
+| Name       | Optional | Datatype | Description |
+|------------|----------|----------|–------------|
+| `listings` | Yes      | Boolean  | Will not render an outline for listings when set to false. |
+| `figures`  | Yes      | Boolean  | Will not render an outline for figures when set to false. |
+| `tables`   | Yes      | Boolean  | Will not render an outline for tables when set to false. |
 
 ```typst
 #table_of_content(
@@ -78,14 +84,14 @@ Parameters:
 )
 ```
 
-### listing()
+### listing
 
 This function is a wrapper for the typst package [codelst](https://github.com/typst/packages/tree/main/packages/preview/codelst).
 It allows the addition of labeled sections of code to the paper.
 Listings will automatically be displayed in the listings index unless the document
 is configured otherwise.
 
-Parameters:
+#### Parameters
 
 | Name | Optional | Datatype | Description |
 |------|----------|----------|–------------|
@@ -104,23 +110,23 @@ Parameters:
 )
 ```
 
-### note()
+### note
 
 This function is a wrapper function for the typst package [drafting](https://github.com/typst/packages/tree/main/packages/preview/drafting).
 It will add a neutral looking note to the paper.
 
-Parameters: 
+#### Parameters
 
 | Name | Optional | Datatype | Description |
 |------|----------|----------|–------------|
 | `content` | No | String | The contents of the note. |
 
-### warning-note()
+### warning-note
 
 This function is a wrapper function for the typst package [drafting](https://github.com/typst/packages/tree/main/packages/preview/drafting).
 It will add a red/orange looking note to the paper.
 
-Parameters: 
+#### Parameters
 
 | Name | Optional | Datatype | Description |
 |------|----------|----------|–------------|
