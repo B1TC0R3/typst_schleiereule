@@ -73,7 +73,7 @@ This function will render an outline of the content and optionally of all listin
 
 
 | Name       | Optional | Datatype | Description |
-|------------|----------|----------|–------------|
+|------------|–---------|----------|-------------|
 | `listings` | Yes      | Boolean  | Will not render an outline for listings when set to false. |
 | `figures`  | Yes      | Boolean  | Will not render an outline for figures when set to false. |
 | `tables`   | Yes      | Boolean  | Will not render an outline for tables when set to false. |
@@ -93,11 +93,11 @@ is configured otherwise.
 
 #### Parameters
 
-| Name | Optional | Datatype | Description |
-|------|----------|----------|–------------|
-| `caption` | No | String | The caption of the listings. This text is also displayed in the listing outline. |
-| `code` | No | Sourcecode | This section is rendered with syntax highlighting. The exact highlighting style depends on the specified langage. |
-| `highlight` | Yes | Array (Integer) | Specify an arbitrary ammount of lines which will be highlighted in the listing. |
+| Name        | Optional | Datatype        | Description |
+|-------------|----------|-----------------|–------------|
+| `caption`   | No       | String          | The caption of the listings. This text is also displayed in the listing outline. |
+| `code`      | No       | Sourcecode      | This section is rendered with syntax highlighting. The exact highlighting style depends on the specified langage. |
+| `highlight` | Yes      | Array (Integer) | Specify an arbitrary ammount of lines which will be highlighted in the listing. |
 
 ```typst
 #listing(
@@ -117,9 +117,9 @@ It will add a neutral looking note to the paper.
 
 #### Parameters
 
-| Name | Optional | Datatype | Description |
-|------|----------|----------|–------------|
-| `content` | No | String | The contents of the note. |
+| Name      | Optional | Datatype | Description |
+|-----------|----------|----------|–------------|
+| `content` | No       | String   | The contents of the note. |
 
 ### warning-note
 
@@ -128,9 +128,9 @@ It will add a red/orange looking note to the paper.
 
 #### Parameters
 
-| Name | Optional | Datatype | Description |
-|------|----------|----------|–------------|
-| `content` | No | String | The contents of the note. |
+| Name      | Optional | Datatype | Description |
+|-----------|----------|----------|–------------|
+| `content` | No       | String   | The contents of the note. |
  
 
 ## 4. Example
