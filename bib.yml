@@ -1,0 +1,7 @@
+thisisabibliographyentry:
+  type: web
+  title: Example title
+  author: Rainer Zufall
+  url: 
+    value: hxxps://somewebsite.com
+    date: 2024-01-05

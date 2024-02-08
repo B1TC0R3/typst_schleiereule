@@ -1,7 +1,16 @@
+// Copyright 2024 Thomas Gingele https://github.com/B1TC0R3
+
+#import "@preview/acrostiche:0.3.1": *
+
 /*
  * Content and style of the content of the document
  */
 #import "content_configuration.typ": content_configuration
+
+/*
+ *
+ */
+#import "appendix_configuration.typ": appendix_configuration
 
 /*
  * Table of content.
@@ -46,3 +55,12 @@
  * )
  */
 #import "listing.typ": listing
+
+/*
+ * Add editor notes.
+ * Example:
+ * 
+ * #note("This text will be displayed in a red box.")
+ * #warning-note("This is some random warning, be cautious.")
+ */
+#import "notes.typ": note, warning-note

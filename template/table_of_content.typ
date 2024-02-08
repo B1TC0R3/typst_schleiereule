@@ -1,3 +1,5 @@
+// Copyright 2024 Thomas Gingele https://github.com/B1TC0R3
+
 #let table_of_content(
   listings: true,
   figures : true,
@@ -20,17 +22,27 @@
       enabled: tables,
     ),
   )
-
-  outline()
+  
+  show outline.entry.where(level: 1): it => {
+    v(15pt, weak: true)
+    strong(it)
+  }
+  
+  outline(indent: auto)
   pagebreak()
 
   for config in table_configurations {
     if config.enabled {
-      outline(
-        title: config.title,
-        target: figure.where(kind: config.kind)
+      block(
+        height: auto,
+        {
+          outline(
+            title: config.title,
+            target: figure.where(kind: config.kind)
+          )
+          v(50pt)
+        }
       )
-      pagebreak()
     } 
   }
 }
