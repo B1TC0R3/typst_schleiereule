@@ -65,7 +65,7 @@ This function will create a titlepage.
 )
 ```
 
-### table\_of\_content
+### table_of_content
 
 This function will render an outline of the content and optionally of all listings, figures and tables.
 
@@ -105,7 +105,7 @@ is configured otherwise.
     ```Bash
     sudo echo "Example commands" > some_file
     rm some_file
-    \```,
+    ```,
     highlight: (1, 2,)
 )
 ```
