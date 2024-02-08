@@ -14,7 +14,20 @@ This repository contains a template aimed to be as adaptable as possible.
 It offers easy-to-use functions to quickly set up a titlepage with up to two logos, toggleable outlines for chapters,
 figures, listings and tables as well as other neat features.
 
-## 2. Functions
+## 2. Styles
+
+**content-configuration** contains the look-and-feel for the main body of the paper.
+It can be applied by adding the following line.
+All typst code after the `#show` statement will take the rules set by the configuration into account.
+
+```
+#show: doc => content_configuration(doc)
+```
+
+**appendix-configuration** changes the configuration applied by **content-configuration**
+slightly. At the moment this only means changing the page numbering style from numbers to letters.
+
+## 3. Functions
 
 ### titlepage()
 
@@ -114,6 +127,6 @@ Parameters:
 | `content` | No | String | The contents of the note. |
  
 
-## 3. Example
+## 4. Example
 
 - WIP
