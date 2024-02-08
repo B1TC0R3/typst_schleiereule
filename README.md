@@ -7,11 +7,11 @@
 1. [About](#about)
 2. [Styles](#styles)
 2. [Functions](#functions)
-    2.1. [titlepage](#titlepage)
-    2.2. [table\_of\_content](#table_of_content)
-    2.3. [listing](#listing)
-    2.4. [note](#note)
-    2.5. [warning-note](#warning-note)
+    - [titlepage](#titlepage)
+    - [table\_of\_content](#table_of_content)
+    - [listing](#listing)
+    - [note](#note)
+    - [warning-note](#warning-note)
 3. [Example](#example)
 
 ## 1. About
