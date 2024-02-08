@@ -1,6 +1,6 @@
 # Schleiereule - A Typst Template
 
-![Compilation Status](https://github.com/B1TC0R3/typst_schleiereule/blob/main/.github/workflows/compile_typst_doc.yml/badge.svg)
+[![Compilable](https://github.com/B1TC0R3/typst_schleiereule/actions/workflows/compile_typst_doc.yml/badge.svg)](https://github.com/B1TC0R3/typst_schleiereule/actions/workflows/compile_typst_doc.yml)
 
 ## Content
 
