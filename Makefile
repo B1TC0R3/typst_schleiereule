@@ -1,5 +1,5 @@
 compile:
-	typst compile main.typ
+	typst compile main.typ exmaple.pdf
 
 watch:
 	typst watch main.typ
