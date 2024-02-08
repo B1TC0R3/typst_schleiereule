@@ -80,7 +80,7 @@ Parameters:
 
 ### listing()
 
-This function is a wrapper for the typst package `codelst`.
+This function is a wrapper for the typst package [codelst](https://github.com/typst/packages/tree/main/packages/preview/codelst).
 It allows the addition of labeled sections of code to the paper.
 Listings will automatically be displayed in the listings index unless the document
 is configured otherwise.
@@ -106,7 +106,7 @@ Parameters:
 
 ### note()
 
-This function is a wrapper function for the typst package `drafting`.
+This function is a wrapper function for the typst package [drafting](https://github.com/typst/packages/tree/main/packages/preview/drafting).
 It will add a neutral looking note to the paper.
 
 Parameters: 
@@ -117,7 +117,7 @@ Parameters:
 
 ### warning-note()
 
-This function is a wrapper function for the typst package `drafting`.
+This function is a wrapper function for the typst package [drafting](https://github.com/typst/packages/tree/main/packages/preview/drafting).
 It will add a red/orange looking note to the paper.
 
 Parameters: 
