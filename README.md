@@ -1,5 +1,7 @@
 # Schleiereule - A Typst Template
 
+![Compliation Status](https://github.com/B1TC0R3/typst_schleiereule/blob/main/.github/workflows/compile_typst_doc.yml/badge.svg)
+
 ## Content
 
 1. [About](#about)
