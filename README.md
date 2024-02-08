@@ -136,3 +136,4 @@ It will add a red/orange looking note to the paper.
 ## 4. Example
 
 An example for what the template looks like can be found [here](./example.pdf).
+
