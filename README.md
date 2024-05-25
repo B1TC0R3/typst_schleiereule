@@ -11,7 +11,6 @@
     - [table\_of\_content](#table_of_content)
     - [listing](#listing)
     - [note](#note)
-    - [warning-note](#warning-note)
 3. [Example](#example)
 
 ## 1. About
@@ -43,12 +42,12 @@ This function will create a titlepage.
 
 | Name | Optional | Datatype | Description |
 |------|----------|----------|-------------|
-| `titlepage` | Yes | String | The title of the paper. |
-| `subtitle`  | Yes | String | The subtitle of the paper. |
-| `author`    | Yes | String | The author/s of the paper as a single string. |
+| `titlepage` | Yes | content | The title of the paper. |
+| `subtitle`  | Yes | content | The subtitle of the paper. |
+| `author`    | Yes | content | The author/s of the paper as a single string. |
 | `logos`     | Yes | Array (Paths) | An array containing one or two relative/absolute paths to images. The images will automatically be resized. |
-| `date` | Yes | String | The date that the paper is released on. |
-| `content` | Yes | String | Freely editable section of the titlepage. Can be used when additional information or images should be displayed. |
+| `date` | Yes | content | The date that the paper is released on. |
+| `content` | Yes | content | Freely editable section of the titlepage. Can be used when additional information or images should be displayed. |
 
 
 ```typst
@@ -95,8 +94,8 @@ is configured otherwise.
 
 | Name        | Optional | Datatype        | Description |
 |-------------|----------|-----------------|-------------|
-| `caption`   | No       | String          | The caption of the listings. This text is also displayed in the listing outline. |
-| `code`      | No       | Sourcecode      | This section is rendered with syntax highlighting. The exact highlighting style depends on the specified langage. |
+| `caption`   | No       | content         | The caption of the listings. This text is also displayed in the listing outline. |
+| `code`      | No       | raw             | This section is rendered with syntax highlighting. The exact highlighting style depends on the specified langage. |
 | `highlight` | Yes      | Array (Integer) | Specify an arbitrary ammount of lines which will be highlighted in the listing. |
 
 ```typst
@@ -119,19 +118,17 @@ It will add a neutral looking note to the paper.
 
 | Name      | Optional | Datatype | Description |
 |-----------|----------|----------|-------------|
-| `content` | No       | String   | The contents of the note. |
+| `content` | No       | content  | The contents of the note. |
+| `width`   | Yes      | auto, relative | The width of the box in which the note is contained. |
+| `stroke`  | Yes      | none, auto, length, color, gradient, stroke, pattern, dictionary | The stroke of the rectangle drawn around the note. |
+| `fill`    | Yes      | none, color, gradient, pattern | The backgroundcolor of the rectangle drawn around the note. |
 
-### warning-note
+Multiple wrapper functions with different color configurations also are available in the template.
+These are:
 
-This function is a wrapper function for the typst package [drafting](https://github.com/typst/packages/tree/main/packages/preview/drafting).
-It will add a red/orange looking note to the paper.
-
-#### Parameters
-
-| Name      | Optional | Datatype | Description |
-|-----------|----------|----------|-------------|
-| `content` | No       | String   | The contents of the note. |
- 
+- `#good-note(...)`: Colored green
+- `#warning-note(...)`: Colored orange
+- `#error-note(...)`: Colored red
 
 ## 4. Example
 
