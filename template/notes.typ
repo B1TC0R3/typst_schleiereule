@@ -13,11 +13,11 @@
 ) = {
   inline-note(
     content,
-    stroke: color,
+    stroke: stroke,
     rect  : rect.with(
       inset : note_inset,
       radius: note_border_radius,
-      fill  : color.lighten(80%),
+      fill  : fill,
       width : width
     )
   )
