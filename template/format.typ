@@ -63,4 +63,4 @@
  * #note("This text will be displayed in a red box.")
  * #warning-note("This is some random warning, be cautious.")
  */
-#import "notes.typ": note, warning-note
+#import "notes.typ": note, good-note, warning-note, error-note
