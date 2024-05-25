@@ -10,19 +10,27 @@
 #let note_warning_border_color     = red
 #let note_warning_background_color = orange.lighten(80%)
 
-#let note(content) = {
+#let note(
+  content,
+  width: auto,
+  color: note_info_border_color,
+) = {
   inline-note(
     content,
-    stroke: note_info_border_color,
+    stroke: color,
     rect  : rect.with(
       inset : note_inset,
       radius: note_border_radius,
-      fill  : note_info_background_color,
+      fill  : color.lighten(80%),
+      width : width
     )
   )
 }
 
-#let warning-note(content) = {
+#let warning-note(
+  content,
+  width: auto
+) = {
   inline-note(
     content,
     stroke: note_warning_border_color,
