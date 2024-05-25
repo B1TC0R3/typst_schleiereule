@@ -5,15 +5,11 @@
 #let note_inset         = 1em
 #let note_border_radius = 0.5em
 
-#let note_info_border_color        = black
-#let note_info_background_color    = gray.lighten(80%)
-#let note_warning_border_color     = red
-#let note_warning_background_color = orange.lighten(80%)
-
 #let note(
   content,
   width: auto,
-  color: note_info_border_color,
+  stroke: black,
+  fill: gray.lighten(80%)
 ) = {
   inline-note(
     content,
@@ -27,17 +23,38 @@
   )
 }
 
+#let good-note(
+  content,
+  width: auto
+) = {
+  note(
+    content,
+    width: width,
+    stroke: green,
+    fill: green.lighten(80%)
+  )
+}
+
 #let warning-note(
   content,
   width: auto
 ) = {
-  inline-note(
+  note(
     content,
-    stroke: note_warning_border_color,
-    rect  : rect.with(
-      inset : note_inset,
-      radius: note_border_radius, 
-      fill  : note_warning_background_color
-    ),
+    width: width,
+    stroke: orange,
+    fill: orange.lighten(80%)
+  )
+}
+
+#let error-note(
+  content,
+  width: auto
+) = {
+  note(
+    content,
+    width: width,
+    stroke: red,
+    fill: red.lighten(60%)
   )
 }
