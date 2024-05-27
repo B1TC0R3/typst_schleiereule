@@ -1,4 +1,5 @@
 // Copyright 2024 Thomas Gingele https://github.com/B1TC0R3
+// Copyright 2024 Felix Schladt https://github.com/FelixSchladt
 
 #import "@preview/drafting:0.1.2": *
 
