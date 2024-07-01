@@ -1,5 +1,5 @@
 #import "../template/format.typ": *
-#import "@preview/codelst:1.0.0": sourcecode
+#import "@preview/codelst:2.0.1": sourcecode
 
 = Introduction <intro>
 
@@ -30,22 +30,34 @@ Bibliography reference: Something @thisisabibliographyentry
 #lorem(25)
 
 #figure(
-  table(
-    columns: (auto, auto),
-    inset: 10pt,
-    align: horizon,
-    [*Column A*], [*Column B*],
-    [Content A.a], [Content B.a],
-    [Content A.b], [Content B.b]
+  styled-table(
+    table(
+      columns: (auto, auto),
+      inset: 10pt,
+      align: horizon,
+      [*Column A*], [*Column B*],
+      [Content A.a], [Content B.a],
+      [Content A.b], [Content B.b]
+    )
   ),
   caption: "Example Table"
 ) <some_example_figure>
 
 This figure can be referenced with @some_example_figure.
 
-#lorem(50)
+#lorem(25)
 
 #figure(
   $ a + b $,
   caption: "Example mega complicated math"
+)
+
+#pagebreak()
+
+#vulnerability(
+  cvss: 7.8,
+  title: "Some Vulnerability" ,
+  description: [What the vulnerability is about],
+  impact: [What the vulnerability can cause],
+  recommendation: [What to do against the vulnerability]
 )

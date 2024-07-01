@@ -64,3 +64,29 @@
  * #warning-note("This is some random warning, be cautious.")
  */
 #import "notes.typ": note, good-note, warning-note, error-note
+
+/*
+ * A theme for normal tables.
+ * Example:
+ *
+ * #styled-table(
+ *   table(
+ *     columns: ...
+ *   )
+ * )
+ */
+#import "styled_table.typ": styled-table
+
+/*
+ * A container for a vulnerability with CVSS score.
+ * Example:
+ *
+ * #vulnerability(
+ *   score: 7.8,
+ *   title: [Some Vulnerability],
+ *   description: [...]
+ *   impact: [...],
+ *   recommendation: [...]
+ * )
+ */
+#import "vulnerability.typ": vulnerability

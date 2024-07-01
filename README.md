@@ -1,5 +1,4 @@
 # Schleiereule - A Typst Template
-
 [![Compilable](https://github.com/B1TC0R3/typst_schleiereule/actions/workflows/compile_typst_doc.yml/badge.svg)](https://github.com/B1TC0R3/typst_schleiereule/actions/workflows/compile_typst_doc.yml)
 
 ## Content
@@ -129,6 +128,34 @@ These are:
 - `#good-note(...)`: Colored green
 - `#warning-note(...)`: Colored orange
 - `#error-note(...)`: Colored red
+
+### styled-table
+
+This is a wrapper for a normal table.
+It addes some stylistics to it.
+
+> Note: This function may later be made a part of the theme itself, but it its own function for now to leave the user a choice.
+
+#### Parameters
+
+| Name      | Optional | Datatype | Description |
+|-----------|----------|----------|-------------|
+| `table`   | No       | table    | The table whichs style will be changed. |
+
+### vulnerability
+
+Adds a pre-configured table to explain a vulnerbility.
+Color and severit automatically update based on the give cvss 3.0 score.
+
+#### Parameters
+
+| Name      | Optional | Datatype | Description |
+|-----------|----------|----------|-------------|
+| `cvss`    | Yes      | Integer  | The CVSS 3.0 score of the vulnerability. |
+| `title`   | Yes      | String, content | The title of the vulnerability. |
+| `description` | Yes | String, content | A description of the vulnerability. |
+| `impact` | Yes | String, content | The impact of the vulnerability. |
+| `recommendation`| Yes | String, content | A recommendation on how to deal with the vulnerability. |
 
 ## 4. Example
 

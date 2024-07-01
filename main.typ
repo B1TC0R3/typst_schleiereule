@@ -2,7 +2,6 @@
 
 #{
 import "template/format.typ": *
-import "@preview/acrostiche:0.3.0": *
 
 //Configure font
 set text(
