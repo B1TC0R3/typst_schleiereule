@@ -67,7 +67,6 @@
   
   //Heading configuration
   set heading(
-    level:      3,
     numbering:  heading_numbering,
     outlined:   true,
     bookmarked: true,
