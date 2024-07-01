@@ -10,6 +10,8 @@
     - [table\_of\_content](#table_of_content)
     - [listing](#listing)
     - [note](#note)
+    - [styled-table](#styled-table)
+    - [vulnerability](#vulnerability)
 3. [Example](#example)
 
 ## 1. About
@@ -129,6 +131,12 @@ These are:
 - `#warning-note(...)`: Colored orange
 - `#error-note(...)`: Colored red
 
+```typst
+#note([
+    This is an example note.
+])
+```
+
 ### styled-table
 
 This is a wrapper for a normal table.
@@ -141,6 +149,16 @@ It addes some stylistics to it.
 | Name      | Optional | Datatype | Description |
 |-----------|----------|----------|-------------|
 | `table`   | No       | table    | The table whichs style will be changed. |
+
+```typst
+#styled-table(
+    #table(
+        columns: 2,
+        [*A*], [*B*],
+        [a], [b],
+    )
+)
+```
 
 ### vulnerability
 
@@ -156,6 +174,16 @@ Color and severit automatically update based on the give cvss 3.0 score.
 | `description` | Yes | String, content | A description of the vulnerability. |
 | `impact` | Yes | String, content | The impact of the vulnerability. |
 | `recommendation`| Yes | String, content | A recommendation on how to deal with the vulnerability. |
+
+```typst
+#vulnerability(
+    cvss: 7.8,
+    title: [Some Vulnerability],
+    description: [...],
+    impact: [...],
+    recommendation: [...]
+)
+```
 
 ## 4. Example
 
