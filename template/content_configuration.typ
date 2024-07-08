@@ -87,9 +87,18 @@
     text(size: 15pt,heading)
     v(5pt)
   }
-  
-  show figure.caption: emph                   //Captions are italic
-  show link: set text(fill: blue.darken(60%)) //Links are blue
+
+  show table.cell.where(y: 0): strong
+  show table: set table(
+    fill: (x, y) => {
+      if y == 0 {
+        gray.lighten(80%)
+      }
+    }
+  )
+
+  show figure.caption: emph
+  show link: set text(fill: blue.darken(60%))
   
   doc
 }
