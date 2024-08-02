@@ -90,3 +90,15 @@
  * )
  */
 #import "vulnerability.typ": vulnerability
+
+/*
+ * Create a signature field.
+ * Example:
+ *
+ * #signature_field(
+ *   name: "Rainer Zufall",
+ *   place: "Exampletopia",
+ *   date: "08.11.2024"
+ * )
+ */
+#import "signature_field.typ": signature_field
