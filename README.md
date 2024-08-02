@@ -185,7 +185,30 @@ Color and severit automatically update based on the give cvss 3.0 score.
 )
 ```
 
+### signature_field
+
+Allows the user to add a field for signatures onto the document.
+
+> Note: Feature currently untested
+
+#### Parameters
+
+| Name | Optional | Datatype | Description |
+|------|----------|----------|-------------|
+| `name`  | Yes | String, content | The name of the signee, printed below the signature field in. |
+| `place` | Yes | String, content | The place where the document was signed. |
+| `date`  | Yes | String, content | The date of the signature. Defaults to the current date. |
+| `spacing` | Yes | Unit | The distance between the previous content and the signature field. Defaults to 40pt. |
+| `length` | Yes | Unit | The length of the signature field. Defaults to 200pt. |
+
+```typst
+#signature_field(
+    name: "Rainer Zufall",
+    place: "Exampletopia",
+    date: "08.11.2024"
+)
+```
+
 ## 4. Example
 
 An example for what the template looks like can be found [here](./example.pdf).
-
