@@ -97,6 +97,12 @@
     }
   )
 
+  show raw.where(block: false): box.with(
+    fill: luma(220),
+    outset: (x: 1pt, y: 2pt),
+    radius: 2pt,
+  )
+
   show figure.caption: emph
   show link: set text(fill: blue.darken(60%))
   
