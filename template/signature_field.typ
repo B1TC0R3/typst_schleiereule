@@ -1,4 +1,6 @@
-#let signature_field(
+// Copyright 2024 Thomas Gingele https://github.com/B1TC0R3
+
+#let signature-field(
   place: none,
   name: none,
   date: datetime.today().display("[year]-[month]-[day]"),

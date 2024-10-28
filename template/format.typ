@@ -3,14 +3,23 @@
 #import "@preview/acrostiche:0.3.1": *
 
 /*
+ * Add author information to a section.
+ *
+ * Example:
+ *
+ * #author-tag("Rainer Zufall", coauthor: "Max Musterman, Anderer Name")
+ */
+#import "author_tag.typ": author-tag
+
+/*
  * Content and style of the content of the document
  */
-#import "content_configuration.typ": content_configuration
+#import "content_configuration.typ": content-configuration
 
 /*
  *
  */
-#import "appendix_configuration.typ": appendix_configuration
+#import "appendix_configuration.typ": appendix-configuration
 
 /*
  * Table of content.
@@ -27,7 +36,7 @@
  *   figures : false,
  * )
  */
-#import "table_of_content.typ": table_of_content
+#import "table_of_content.typ": table-of-content
 
 /*
  * The titlepage.
@@ -101,4 +110,4 @@
  *   date: "08.11.2024"
  * )
  */
-#import "signature_field.typ": signature_field
+#import "signature_field.typ": signature-field

@@ -30,15 +30,13 @@ Bibliography reference: Something @thisisabibliographyentry
 #lorem(25)
 
 #figure(
-  styled-table(
-    table(
-      columns: (auto, auto),
-      inset: 10pt,
-      align: horizon,
-      [*Column A*], [*Column B*],
-      [Content A.a], [Content B.a],
-      [Content A.b], [Content B.b]
-    )
+  table(
+    columns: (50%, 50%),
+    inset: 10pt,
+    align: horizon,
+    [*Column A*], [*Column B*],
+    [Content A.a], [Content B.a],
+    [Content A.b], [Content B.b]
   ),
   caption: "Example Table"
 ) <some_example_figure>
@@ -53,11 +51,3 @@ This figure can be referenced with @some_example_figure.
 )
 
 #pagebreak()
-
-#vulnerability(
-  cvss: 7.8,
-  title: "Some Vulnerability" ,
-  description: [What the vulnerability is about],
-  impact: [What the vulnerability can cause],
-  recommendation: [What to do against the vulnerability]
-)

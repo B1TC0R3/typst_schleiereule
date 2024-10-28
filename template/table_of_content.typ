@@ -1,6 +1,6 @@
 // Copyright 2024 Thomas Gingele https://github.com/B1TC0R3
 
-#let table_of_content(
+#let table-of-content(
   listings: true,
   figures : true,
   tables  : true,

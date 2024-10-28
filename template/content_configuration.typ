@@ -1,6 +1,7 @@
-// Copyright 2024 Thomas Gingele https://github.com/B1TC0R3
 
-#let content_configuration(doc) = {
+,,// Copyright 2024 Thomas Gingele https://github.com/B1TC0R3
+
+#let content-configuration(doc) = {
   let page_numbering_style = "1"
   let heading_numbering    = "1."
 
@@ -16,23 +17,25 @@
      * | |  | |  __/ (_| | (_| |  __/ |   
      * |_|  |_|\___|\__,_|\__,_|\___|_|   
      */
-    header: locate(loc => {
+    header: context({
       let elem_body
-      let elems = query(
-        selector(heading).after(loc),
-        loc,
-      )
+      let elems
 
-      if elems == () {
+      if counter(page).get().first() > 1 {
         elems = query(
-          selector(heading).before(loc),
-          loc,
+          selector(heading).after(here()),
+        )
+
+        if elems.len() > 0 {
+          elem_body = elems.first().body
+        }
+
+      } else {
+        elems = query(
+          selector(heading).before(here()),
         )
 
         elem_body = elems.last().body
-        
-      } else {
-        elem_body = elems.first().body
         
       }
       
@@ -56,9 +59,9 @@
      */
     footer: [
       #line(end: (100%, 0%))
-      #align(right, counter(page).display(
+      #align(right, context{ counter(page).display(
         page_numbering_style
-      ))
+      )})
     ]
   )
 
@@ -88,7 +91,7 @@
     v(5pt)
   }
 
-  show table.cell.where(y: 0): strong
+  //show table.cell.where(y: 0): strong
   show table: set table(
     fill: (x, y) => {
       if y == 0 {
@@ -97,12 +100,16 @@
     }
   )
 
+  /*
   show raw.where(block: false): box.with(
     fill: luma(220),
     outset: (x: 1pt, y: 2pt),
     radius: 2pt,
   )
+  */
 
+  show raw.where(block: false): text.with(font: "Fira Code")
+  
   show figure.caption: emph
   show link: set text(fill: blue.darken(60%))
   

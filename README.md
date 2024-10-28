@@ -210,6 +210,22 @@ Allows the user to add a field for signatures onto the document.
 )
 ```
 
+### author-tag
+
+Add an author tag below a heading.
+
+#### Parameters
+
+| Name | Optional | Datatype | Description |
+|------|----------|----------|–------------|
+| `authors` | No | String, content | The name/s of the author/s. |
+| `coauthors` | Yes | String, content | The name/s of the co-author/s. |
+| `editors` | Yes | String, content | The name/s of the editor/s. |
+
+```typst
+#author-tag("Rainer Zufall", "Max Musterman", "Gerhard Beispiel, Frida Müller")
+```
+
 ## 4. Example
 
 An example for what the template looks like can be found [here](./example.pdf).
