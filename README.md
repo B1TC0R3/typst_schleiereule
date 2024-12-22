@@ -218,7 +218,7 @@ Add an author tag below a heading.
 #### Parameters
 
 | Name        | Optional | Datatype        | Description                    |
-|-------------|----------|-----------------|–-------------------------------|
+|-------------|----------|-----------------|--------------------------------|
 | `authors`   | No       | String, content | The name/s of the author/s.    |
 | `coauthors` | Yes      | String, content | The name/s of the co-author/s. |
 | `editors`   | Yes      | String, content | The name/s of the editor/s.    |
