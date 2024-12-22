@@ -7,12 +7,13 @@
 2. [Styles](#styles)
 2. [Functions](#functions)
     - [titlepage](#titlepage)
-    - [table\_of\_content](#table_of_content)
+    - [table-of-content](#table-of-content)
     - [listing](#listing)
     - [note](#note)
     - [styled-table](#styled-table)
     - [vulnerability](#vulnerability)
-    - [signature_field](#signature_field)
+    - [signature-field](#signature-field)
+    - [author-tag](#author-tag)
 3. [Example](#example)
 
 ## 1. About
@@ -28,7 +29,7 @@ It can be applied by adding the following line.
 All typst code after the `#show` statement will take the rules set by the configuration into account.
 
 ```
-#show: doc => content_configuration(doc)
+#show: doc => content-configuration(doc)
 ```
 
 **appendix-configuration** changes the configuration applied by **content-configuration**
@@ -66,7 +67,7 @@ This function will create a titlepage.
 )
 ```
 
-### table_of_content
+### table-of-content
 
 This function will render an outline of the content and optionally of all listings, figures and tables.
 
@@ -80,7 +81,7 @@ This function will render an outline of the content and optionally of all listin
 | `tables`   | Yes      | Boolean  | Will not render an outline for tables when set to false. |
 
 ```typst
-#table_of_content(
+#table-of-content(
     listings: false
 )
 ```
@@ -186,7 +187,7 @@ Color and severit automatically update based on the give cvss 3.0 score.
 )
 ```
 
-### signature_field
+### signature-field
 
 Allows the user to add a field for signatures onto the document.
 
@@ -203,7 +204,7 @@ Allows the user to add a field for signatures onto the document.
 | `length` | Yes | Unit | The length of the signature field. Defaults to 200pt. |
 
 ```typst
-#signature_field(
+#signature-field(
     name: "Rainer Zufall",
     place: "Exampletopia",
     date: "08.11.2024"
