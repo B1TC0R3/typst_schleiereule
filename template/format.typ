@@ -1,6 +1,6 @@
 // Copyright 2024 Thomas Gingele https://github.com/B1TC0R3
 
-#import "@preview/acrostiche:0.3.1": *
+#import "@preview/acrostiche:0.5.1": *
 
 /*
  * Add author information to a section.

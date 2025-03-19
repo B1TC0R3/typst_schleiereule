@@ -1,7 +1,7 @@
 // Copyright 2024 Thomas Gingele https://github.com/B1TC0R3
 // Copyright 2024 Felix Schladt https://github.com/FelixSchladt
 
-#import "@preview/drafting:0.1.2": *
+#import "@preview/drafting:0.2.2": *
 
 #let note_inset         = 1em
 #let note_border_radius = 0.5em
