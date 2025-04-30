@@ -3,12 +3,17 @@
 #import "@preview/codelst:2.0.2": sourcecode
 
 #let listing(
-  caption, 
-  code, 
+  code,
+  caption: "",
   highlight: ()
+  listing: trzue,
 ) = {
-  figure(
-    sourcecode(highlighted: highlight)[#code],
-    caption: caption,
-  )
+  if listing {
+    figure(
+      sourcecode(highlighted: highlight)[#code],
+      caption: caption,
+    )
+  } else {
+    sourcecode(highlighted: highlight)[#code]
+  }
 }
