@@ -17,13 +17,13 @@ Bibliography reference: Something @thisisabibliographyentry
 #lorem(50)
 
 #listing(
-  "Example Listing with code highlight",
   ```python
   def main():
     a = 10 + 25
     for count in range(a):
       print("Too many hello worlds! :(")
   ```,
+  caption: "Example Python code with line highlighting.",
   highlight: (3,)
 )
 

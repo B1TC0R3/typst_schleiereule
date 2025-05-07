@@ -6,9 +6,8 @@
   code,
   caption: "",
   highlight: ()
-  listing: trzue,
 ) = {
-  if listing {
+  if caption != "" {
     figure(
       sourcecode(highlighted: highlight)[#code],
       caption: caption,
