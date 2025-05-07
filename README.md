@@ -89,25 +89,26 @@ This function will render an outline of the content and optionally of all listin
 ### listing
 
 This function is a wrapper for the typst package [codelst](https://github.com/typst/packages/tree/main/packages/preview/codelst).
-It allows the addition of labeled sections of code to the paper.
-Listings will automatically be displayed in the listings index unless the document
-is configured otherwise.
+It allows the addition of sections of code to the paper.
+When no caption is provided, the listing will not be a figure and is instead
+embedded as just a code block with syntax highlighting.
+If a listing has a caption (= is a figure), it will automatically be displayed in the listings index unless the document is configured otherwise.
 
 #### Parameters
 
 | Name        | Optional | Datatype        | Description |
 |-------------|----------|-----------------|-------------|
-| `caption`   | No       | content         | The caption of the listings. This text is also displayed in the listing outline. |
 | `code`      | No       | raw             | This section is rendered with syntax highlighting. The exact highlighting style depends on the specified langage. |
+| `caption`   | Yes       | content         | The caption of the listings. This text is also displayed in the listing outline. |
 | `highlight` | Yes      | Array (Integer) | Specify an arbitrary ammount of lines which will be highlighted in the listing. |
 
 ```typst
 #listing(
-    "This is an example caption",
     ```Bash
     sudo echo "Example commands" > some_file
     rm some_file
     ```,
+    caption: "This is an example caption",
     highlight: (1, 2,)
 )
 ```
