@@ -15,10 +15,10 @@
   inline-note(
     content,
     stroke: stroke,
+    fill  : fill,
     rect  : rect.with(
       inset : note_inset,
       radius: note_border_radius,
-      fill  : fill,
       width : width
     )
   )
