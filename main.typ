@@ -27,6 +27,10 @@ table-of-content()
 
 //Load acronyms
 include("acronyms.typ")
+print-index(
+  title: "Acronyms",
+  row-gutter: 10pt
+)
 
 //Chapters and content
 // Add an include for every file you have
