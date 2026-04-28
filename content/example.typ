@@ -1,16 +1,15 @@
-#import "../template/format.typ": *
-#import "@preview/codelst:2.0.1": sourcecode
+#import "/template/template.typ": *
 
 = Introduction <intro>
 
 The label of the section can later be referenced like this: @intro
 
-Acronyms work like this: #acr("WTP")
+Acronyms work like this: #gls("acr")
 
 Bibliography reference: Something @thisisabibliographyentry
 
 #note("Just adding some simple information here")
-#warning-note("This is a note from the editor. Please remove me later or something.")
+#note(mode: "warning", "This is a warning!")
 
 == Subintroduction
 
@@ -36,7 +35,8 @@ Bibliography reference: Something @thisisabibliographyentry
     align: horizon,
     [*Column A*], [*Column B*],
     [Content A.a], [Content B.a],
-    [Content A.b], [Content B.b]
+    [Content A.b], [Content B.b],
+    [Content A.c], [Content B.c],
   ),
   caption: "Example Table"
 ) <some_example_figure>

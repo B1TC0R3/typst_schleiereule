@@ -4,230 +4,91 @@
 ## Content
 
 1. [About](#about)
-2. [Styles](#styles)
-2. [Functions](#functions)
-    - [titlepage](#titlepage)
-    - [table-of-content](#table-of-content)
-    - [listing](#listing)
-    - [note](#note)
-    - [styled-table](#styled-table)
-    - [vulnerability](#vulnerability)
-    - [signature-field](#signature-field)
-    - [author-tag](#author-tag)
+1. [Usage](#usage)
 3. [Example](#example)
 
 ## 1. About
 
 This repository contains a template aimed to be as adaptable as possible.
-It offers easy-to-use functions to quickly set up a titlepage with up to two logos, toggleable outlines for chapters,
-figures, listings and tables as well as other neat features.
+It offers easy-to-use functions to quickly set up a titlepage with up to two logos, toggleable outlines for chapters, figures, listings and tables as well as other neat features.
 
-## 2. Styles
+## Usage
 
-**content-configuration** contains the look-and-feel for the main body of the paper.
-It can be applied by adding the following line.
-All typst code after the `#show` statement will take the rules set by the configuration into account.
+All of the parameters shown below are optional.
 
-```
-#show: doc => content-configuration(doc)
-```
+```typ
+#import "/template/template.typ": *
 
-**appendix-configuration** changes the configuration applied by **content-configuration**
-slightly. At the moment this only means changing the page numbering style from numbers to letters.
+#schleiereule(
+  /*
+  * Alternatively, it is also possible to specify however many logos you want with an array.
+  * Tiling is automatic.
+  *
+  * logo: ("logo1.png", "logo2.png", ...)
+  * */
+  logo: "images/logo.png",
 
-## 3. Functions
+  /*
+  * The size of the title will scale automatically the longer/shorter it becomes.
+  * This happens within a static threshold to prevent style issues.
+  * */
+  title: "This is an example title",
 
-### titlepage
+  /*
+  * The size of the subtitle will scale automatically the longer/shorter it becomes.
+  * This happens within a static threshold to prevent style issues.
+  * */
+  subtitle: "This is a subtitle",
 
-This function will create a titlepage.
+  /*
+  * Alternatively, it is possible to specify however many authors a required with an array.
+  *
+  * authors: ("Rainer Zufall", "Wilma Ruhe", ...)
+  * */
+  authors: "Rainer Zufall",
 
-#### Parameters
+  /*
+  * The path to the glossary file. The file has to export a dictionary named 'entry_list'
+  * in accordance with the typst package 'glossarium'.
+  *
+  * Additional information: https://typst.app/universe/package/glossarium
+  * */
+  glossary: "glossary.typ",
 
-| Name | Optional | Datatype | Description |
-|------|----------|----------|-------------|
-| `titlepage` | Yes | content | The title of the paper. |
-| `subtitle`  | Yes | content | The subtitle of the paper. |
-| `author`    | Yes | content | The author/s of the paper as a single string. |
-| `logos`     | Yes | Array (Paths) | An array containing one or two relative/absolute paths to images. The images will automatically be resized. |
-| `date` | Yes | content | The date that the paper is released on. |
-| `content` | Yes | content | Freely editable section of the titlepage. Can be used when additional information or images should be displayed. |
+  /*
+  * The body of the paper. Can be a single string, piece of content, or an array with
+  * both data types mixed. Strings will automatically be treated as filenames.
+  * */
+  body: (
+    "content/example.typ",
+    [
+      = Second Chapter
 
+      This is some additional custom content.
+    ],
+  ),
 
-```typst
-#titlepage(
-    title   : "Example Title",
-    subtitle: "Example Subtitle",
-    author  : "Some Guy",
-    logos   : ("path/to/logo_a.png", "path/to/logo_b.png"),
-    date    : datetime.today().display("[day].[month].[year]"),
-    content : [
-        *NOTICE*:
-        This is an extra bit of example text.
-    ]
+  /*
+  * Works the same way as 'body' with support for strings, content, or arrays with both mixed.
+  * */
+  appendix: [This would be an appendix entry.],
+
+  /*
+  * The path to the bibliography file.
+  * */
+  bibliography_file: "bib.yml",
+
+  /*
+  * The language of the document.
+  * Currently, only English and German are supported.
+  * */
+  lang: "en",
 )
-```
-
-### table-of-content
-
-This function will render an outline of the content and optionally of all listings, figures and tables.
-
-#### Parameters
-
-
-| Name       | Optional | Datatype | Description |
-|------------|----------|----------|-------------|
-| `listings` | Yes      | Boolean  | Will not render an outline for listings when set to false. |
-| `figures`  | Yes      | Boolean  | Will not render an outline for figures when set to false. |
-| `tables`   | Yes      | Boolean  | Will not render an outline for tables when set to false. |
-
-```typst
-#table-of-content(
-    listings: false
-)
-```
-
-### listing
-
-This function is a wrapper for the typst package [codelst](https://github.com/typst/packages/tree/main/packages/preview/codelst).
-It allows the addition of sections of code to the paper.
-When no caption is provided, the listing will not be a figure and is instead
-embedded as just a code block with syntax highlighting.
-If a listing has a caption (= is a figure), it will automatically be displayed in the listings index unless the document is configured otherwise.
-
-#### Parameters
-
-| Name        | Optional | Datatype        | Description |
-|-------------|----------|-----------------|-------------|
-| `code`      | No       | raw             | This section is rendered with syntax highlighting. The exact highlighting style depends on the specified langage. |
-| `caption`   | Yes       | content         | The caption of the listings. This text is also displayed in the listing outline. |
-| `highlight` | Yes      | Array (Integer) | Specify an arbitrary ammount of lines which will be highlighted in the listing. |
-
-```typst
-#listing(
-    ```Bash
-    sudo echo "Example commands" > some_file
-    rm some_file
-    ```,
-    caption: "This is an example caption",
-    highlight: (1, 2,)
-)
-```
-
-### note
-
-This function is a wrapper function for the typst package [drafting](https://github.com/typst/packages/tree/main/packages/preview/drafting).
-It will add a neutral looking note to the paper.
-
-#### Parameters
-
-| Name      | Optional | Datatype | Description |
-|-----------|----------|----------|-------------|
-| `content` | No       | content  | The contents of the note. |
-| `width`   | Yes      | auto, relative | The width of the box in which the note is contained. |
-| `stroke`  | Yes      | none, auto, length, color, gradient, stroke, pattern, dictionary | The stroke of the rectangle drawn around the note. |
-| `fill`    | Yes      | none, color, gradient, pattern | The backgroundcolor of the rectangle drawn around the note. |
-
-Multiple wrapper functions with different color configurations also are available in the template.
-These are:
-
-- `#good-note(...)`: Colored green
-- `#warning-note(...)`: Colored orange
-- `#error-note(...)`: Colored red
-
-```typst
-#note([
-    This is an example note.
-])
-```
-
-### styled-table
-
-This is a wrapper for a normal table.
-It addes some stylistics to it.
-
-> Note: This function may later be made a part of the theme itself, but it its own function for now to leave the user a choice.
-
-#### Parameters
-
-| Name      | Optional | Datatype | Description |
-|-----------|----------|----------|-------------|
-| `table`   | No       | table    | The table whichs style will be changed. |
-
-```typst
-#styled-table(
-    #table(
-        columns: 2,
-        [*A*], [*B*],
-        [a], [b],
-    )
-)
-```
-
-### vulnerability
-
-Adds a pre-configured table to explain a vulnerbility.
-Color and severit automatically update based on the give cvss 3.0 score.
-
-#### Parameters
-
-| Name      | Optional | Datatype | Description |
-|-----------|----------|----------|-------------|
-| `cvss`    | Yes      | Integer  | The CVSS 3.0 score of the vulnerability. |
-| `title`   | Yes      | String, content | The title of the vulnerability. |
-| `description` | Yes | String, content | A description of the vulnerability. |
-| `impact` | Yes | String, content | The impact of the vulnerability. |
-| `recommendation`| Yes | String, content | A recommendation on how to deal with the vulnerability. |
-
-```typst
-#vulnerability(
-    cvss: 7.8,
-    title: [Some Vulnerability],
-    description: [...],
-    impact: [...],
-    recommendation: [...]
-)
-```
-
-### signature-field
-
-Allows the user to add a field for signatures onto the document.
-
-> Note: Feature currently untested
-
-#### Parameters
-
-| Name | Optional | Datatype | Description |
-|------|----------|----------|-------------|
-| `name`  | Yes | String, content | The name of the signee, printed below the signature field in. |
-| `place` | Yes | String, content | The place where the document was signed. |
-| `date`  | Yes | String, content | The date of the signature. Defaults to the current date. |
-| `spacing` | Yes | Unit | The distance between the previous content and the signature field. Defaults to 40pt. |
-| `length` | Yes | Unit | The length of the signature field. Defaults to 200pt. |
-
-```typst
-#signature-field(
-    name: "Rainer Zufall",
-    place: "Exampletopia",
-    date: "08.11.2024"
-)
-```
-
-### author-tag
-
-Add an author tag below a heading.
-
-#### Parameters
-
-| Name        | Optional | Datatype        | Description                    |
-|-------------|----------|-----------------|--------------------------------|
-| `authors`   | No       | String, content | The name/s of the author/s.    |
-| `coauthors` | Yes      | String, content | The name/s of the co-author/s. |
-| `editors`   | Yes      | String, content | The name/s of the editor/s.    |
-
-```typst
-#author-tag("Rainer Zufall", "Max Musterman", "Gerhard Beispiel, Frida Müller")
 ```
 
 ## 4. Example
 
-An example for what the template looks like can be found [here](./example.pdf).
+Example typst code for how to work with the template can be found in [main.typ](./main.typ)
+and [example.typ](./content/example.typ).
+
+A compiled example for what the template looks like can be found in [example.pdf](./example.pdf).

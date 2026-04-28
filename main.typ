@@ -1,47 +1,68 @@
-// Copyright 2024 Thomas Gingele https://github.com/B1TC0R3
+// Copyright 2025 Thomas Gingele https://github.com/B1TC0R3
+#import "/template/template.typ": *
 
-#{
-set text(lang: "de")
-import "/template/format.typ": *
+#schleiereule(
+  /*
+  * Alternatively, it is also possible to specify however many logos you want with an array.
+  * Tiling is automatic.
+  *
+  * logo: ("logo1.png", "logo2.png", ...)
+  * */
+  logo: "images/logo.png",
 
-//Configure font
-set text(
-  font: "Inria Serif", // When compiling locally, eiter install this font or change to another one
-  size: 12pt
-)
+  /*
+  * The size of the title will scale automatically the longer/shorter it becomes.
+  * This happens within a static threshold to prevent style issues.
+  * */
+  title: "This is an example title",
 
-//Title page
-titlepage(
-  title   : "This is a title",
+  /*
+  * The size of the subtitle will scale automatically the longer/shorter it becomes.
+  * This happens within a static threshold to prevent style issues.
+  * */
   subtitle: "This is a subtitle",
-  date    : datetime.today().display("[day].[month].[year]"),
-  author  : "Thomas Gingele, Max Musterman",
-  logos   : ("/images/logo.png",), //Supports 0 to 2 logos, enter image path/s as array
-  content : [
-    // This text area can be edited freely, as you would the normal document
-  ]
+
+  /*
+  * Alternatively, it is possible to specify however many authors a required with an array.
+  *
+  * authors: ("Rainer Zufall", "Wilma Ruhe", ...)
+  * */
+  authors: "Rainer Zufall",
+
+  /*
+  * The path to the glossary file. The file has to export a dictionary named 'entry_list'
+  * in accordance with the typst package 'glossarium'.
+  *
+  * Additional information: https://typst.app/universe/package/glossarium
+  * */
+  glossary: "glossary.typ",
+
+  /*
+  * The body of the paper. Can be a single string, piece of content, or an array with
+  * both data types mixed. Strings will automatically be treated as filenames.
+  * */
+  body: (
+    "content/example.typ",
+    [
+      = Second Chapter
+
+      This is some additional custom content.
+    ],
+  ),
+
+  /*
+  * Works the same way as 'body' with support for strings, content, or arrays with both mixed.
+  * */
+  appendix: [This would be an appendix entry.],
+
+  /*
+  * The path to the bibliography file.
+  * */
+  bibliography_file: "bib.yml",
+
+  /*
+  * The language of the document.
+  * Currently, only English and German are supported.
+  * */
+  lang: "en",
 )
-
-//Table of content
-table-of-content()
-
-//Load acronyms
-include("acronyms.typ")
-print-index(
-  title: "Acronyms",
-  row-gutter: 10pt
-)
-
-//Chapters and content
-// Add an include for every file you have
-show: doc => content-configuration(doc)
-// The recommended structure would look like this:
-// include("/content/01_introduction.typ")
-// include("/content/02_basics.typ")
-// ...
-include("/content/xx_examples.typ")
-
-//Bibliography and appendix
-show: doc => appendix-configuration(doc)
-bibliography("bib.bib")
-}
