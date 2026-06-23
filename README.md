@@ -69,7 +69,7 @@ All of the parameters shown below are optional.
   ),
 
   /*
-  * Works the same way as 'body' with support for strings, content, or arrays with both mixed.
+  * Works the same way as 'body' with dynamic support for strings, content, or arrays.
   * */
   appendix: [This would be an appendix entry.],
 
